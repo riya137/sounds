@@ -1,0 +1,36 @@
+<!----<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div *ngFor="let film of constant.films" routerLink="./{{film.id}}">
+                <div class="col-md-3 list-group-item ">
+                         <img [src]=film.film_image class="img-responsive">
+                         <h4><b>{{film.film_name}}</b></h4>   
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+-->
+<!----
+<div class="container">
+    <div class="row">
+        <div *ngFor="let film of constant.films" routerLink="./{{film.id}}">
+            <div class="col-md-3 list-group-item ">
+                     <img [src]=film.film_image class="img-responsive">
+                     <h3><b>{{film.film_name}}</b></h3>
+                
+            </div>
+        </div>
+    </div>
+</div>
+--->
+<input [(ngModel)]="searchText" placeholder="search text goes here">
+<ul>
+  <li *ngFor="let film of constant.films | filter : searchText">
+    {{film.film_name}}
+  </li>
+</ul>
+

@@ -1,0 +1,23 @@
+<div class="container">
+    
+    <div class="col-md-6 col-xs-6 col-sm-6">
+        <div *ngFor="let f of constant.films">
+           
+           <div *ngFor="let film of f.song_list">
+              
+                <div *ngIf="songID==film.songId && f.id==filmID">
+                  
+                  <audio controls src="{{film.song_play}}" type="audio/mp3" class="play_song" >
+                  </audio>  
+                  <h1 class="text-primary">Now Playing</h1>
+                  <h4>Song  : {{film.song_name}}</h4>
+                  <h4>Film  : {{f.film_name}}</h4>
+                </div>
+           </div>
+        </div>
+                   
+     </div>
+  </div>
+  
+  
+ 

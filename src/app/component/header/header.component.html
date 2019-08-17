@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+            <a><img src="assets/images/index.png" width=auto height="80" class="img=responsive"></a>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-inverse mynavbar">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a routerLink=""><b>Home</b></a></li>
+        <li><a routerLink="/about"><b>About</b></a></li>
+        <li><a routerLink="/contact"><b>Contact</b></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="!isAuthenticated"><a routerLink="/signup"><span class="glyphicon glyphicon-user"></span><b>Sign Up</b></a></li>
+        <li *ngIf="!isAuthenticated"><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span><b>Login</b></a></li>
+        <li *ngIf="isAuthenticated"><a (click)="onLogout()"><b>Logout</b></a></li>
+
+      </ul>
+    </div>
+  </nav>
+    
+  
